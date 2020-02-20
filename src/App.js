@@ -3,7 +3,6 @@ import './App.css';
 import Logger from './components/Logger/Logger';
 import { readJSONStream } from './utils/JsonStream'
 
-
 class App extends Component {
 
   constructor(props) {
@@ -51,7 +50,6 @@ class App extends Component {
   handleSelectKey(e) {
     this.setState({ selectedKey: e.target.value });
   }
-
 
   render() {
     return (

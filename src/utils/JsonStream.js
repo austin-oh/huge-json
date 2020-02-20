@@ -7,10 +7,8 @@ export function readJSONStream(path, fieldName) {
         try {
             const readStream = fs.createReadStream(path);
             const parseStream = JSONStream.parse(fieldName);
-
             const timeFrom = Date.now();
-
-            return readStream
+            readStream
                 .pipe(parseStream)
                 .pipe(es.mapSync(function(data) {
                     const timeTo = Date.now();
@@ -22,7 +20,5 @@ export function readJSONStream(path, fieldName) {
         } catch(e) {
             reject(e);
         }
-
     });
-
 }
