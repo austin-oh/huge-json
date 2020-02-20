@@ -4,17 +4,7 @@ import Logger from './components/Logger/Logger';
 import { readJSONStream } from './utils/JsonStream'
 
 
-const { ipcRenderer } = window.require('electron');
-const fs = window.require('fs');
-
 class App extends Component {
-
-  // const path =  'src/assets/1.json';
-  // const data = fs.readFileSync(path, 'utf-8');
-  // if (!data) {
-  //   console.log('Error while reading file!');
-  // }
-  // console.log(data);
 
   constructor(props) {
     super(props)
@@ -34,21 +24,19 @@ class App extends Component {
   }
 
   handleOnClick() {
-    let log = `[Reading File] starting with key: ${this.state.selectedKey}`
-    this.addLog(log);
-    // ipcRenderer.send('CATCH_ON_MAIN', { test: 'Ok' });
+    let log = `[Reading File] starting with key: ${this.state.selectedKey} ...`; this.addLog(log);
+
     const path = "src/assets/huge.json";
     const key = this.state.selectedKey;
     readJSONStream(path, key)
       .then(result => {
         this.setState({ readData: result.data });
 
-        log = `[Reading File] finished in ${parseFloat(result.executeTime / 1000)}s`; this.addLog(log);
+        log = `[Reading File] finished in ${parseFloat(result.executeTime / 1000)}s.`; this.addLog(log);
         // results
         const isArray = Array.isArray(result.data);
         const count = isArray ? result.data.length : Object.keys(result.data).length;
         const unit = isArray ? 'children' : 'keys';
-        
         log = `[Result] contains ${count} ${unit}.`; this.addLog(log);
       })
       .catch(error => {
