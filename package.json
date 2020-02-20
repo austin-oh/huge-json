@@ -40,7 +40,8 @@
     "fs": "^0.0.1-security",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",

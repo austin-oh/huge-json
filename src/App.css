@@ -3,9 +3,23 @@
   background-color: #282c34;
   min-height: 100vh;
   padding: 50px;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.inline-item {
+  display: inline;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.my-20 { margin-top: 20px; margin-bottom: 20px; }
+
 
 .flex-container {
   width: 100%;
@@ -14,6 +28,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.App-option-container {
+  border: 1px solid grey;
 }
 
 .App-primary-keys {
