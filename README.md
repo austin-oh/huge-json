@@ -1,6 +1,12 @@
-https://qiita.com/izszzz/items/fcfe78334836ef6bcf86
+# Run the application
+
+- yarn
+
+- yarn start
 
 
+
+# Default Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
